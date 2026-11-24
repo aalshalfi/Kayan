@@ -1,35 +1,26 @@
 # Kayan Trading Inc. — Company Website
 
-Source code of **[thekayan.com](https://thekayan.com)**, the website of Kayan Trading Inc. (Ottawa, Canada) — premium perfumes, import & export, wholesale & retail.
+Website of **Kayan Trading Inc.** (Ottawa, Canada) — premium perfumes, import & export, wholesale & retail.
+Built as a modern one-page site: Home · About · Services · Contact in a single page.
 
-## Pages
+## Live preview
 
-| File | Page |
-| --- | --- |
-| `index.html` | Home |
-| `about.html` | About Us |
-| `services.html` | Services |
-| `contact.html` | Contact |
+**https://aalshalfi.github.io/Kayan/**
 
 ## Structure
 
 ```
 .
-├── index.html / about.html / services.html / contact.html
-├── assets/
-│   ├── css/style.css        # site stylesheet
-│   └── img/logo-kayan.png   # company logo
-└── CNAME                    # custom domain: thekayan.com
+├── index.html       # the whole site (design + content in one file)
+├── logo-kayan.PNG   # company logo
+└── README.md
 ```
 
-## Publishing
+## Notes
 
-This repository holds the hand-built HTML/CSS version of the site.
-Note: the live **thekayan.com** is currently served by GoDaddy Website Builder,
-so changes here do **not** go live automatically — this repo is the clean,
-organized source copy.
-
-## Tech
-
-- Static HTML5 + CSS3
-- Fonts: Poppins & Inter (Google Fonts)
+- Plain HTML/CSS/JS, no build step. Fonts: Poppins & Inter (Google Fonts).
+- The live **thekayan.com** is currently served by GoDaddy Website Builder;
+  this repository is the clean, organized source copy, published via GitHub Pages
+  at the address above.
+- Earlier multi-page version (separate About / Services / Contact pages) is
+  preserved in the git history.

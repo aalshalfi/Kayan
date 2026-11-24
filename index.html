@@ -1,61 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Kayan Trading Inc. – Home</title>
-  <meta name="description" content="Premium perfumes, import, export, wholesale & retail in Canada.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<title>Kayan Trading Inc. — Premium Perfumes, Import & Export in Canada</title>
+<meta name="description" content="Kayan Trading Inc. connects Canadian consumers with premium fragrances and global products. Import, export, wholesale & retail — Ottawa, Canada.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#b80a0a; --red-dark:#8f0707; --dark:#2b2b2b; --grey:#5c5c5c;
+  --bg:#ffffff; --bg-soft:#faf7f5; --line:#eee3e0;
+  --shadow:0 10px 30px rgba(43,43,43,.08);
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--dark);background:var(--bg);line-height:1.65}
+h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.2}
+.container{width:92%;max-width:1140px;margin:auto}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+.brand{display:flex;align-items:center;height:54px;width:186px;overflow:hidden;flex:none}
+.brand img{width:186px;height:54px;object-fit:cover;object-position:center}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-weight:500;color:var(--dark);padding:.3rem 0;border-bottom:2px solid transparent;transition:.2s}
+.nav-links a:hover{color:var(--red);border-color:var(--red)}
+#menu-toggle{display:none}
+.burger{display:none;font-size:1.6rem;cursor:pointer;color:var(--dark)}
+@media(max-width:768px){
+  .burger{display:block}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:.5rem 5%;border-bottom:1px solid var(--line);display:none}
+  .nav-links li{padding:.6rem 0;border-top:1px solid var(--line)}
+  #menu-toggle:checked ~ .nav-links{display:flex}
+}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,#fff 55%,var(--bg-soft));padding:5.2rem 0 4.2rem;text-align:center}
+.eyebrow{display:inline-block;color:var(--red);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;border:1px solid var(--line);background:#fff;padding:.35rem .9rem;border-radius:99px;margin-bottom:1.2rem}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:700;margin-bottom:1.1rem}
+.hero h1 span{color:var(--red)}
+.hero p{max-width:640px;margin:0 auto 2rem;font-size:1.13rem;color:var(--grey)}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 1.7rem;border-radius:10px;font-weight:600;transition:.2s}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 8px 20px rgba(184,10,10,.25)}
+.btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--dark);color:var(--dark)}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+.stats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:3.2rem}
+.stat{text-align:center}
+.stat strong{display:block;font-family:'Poppins';font-size:1.5rem;color:var(--red)}
+.stat small{color:var(--grey);font-size:.9rem}
+
+/* Sections */
+.section{padding:4.5rem 0}
+.section.alt{background:var(--bg-soft)}
+.section h2{font-size:clamp(1.7rem,3.5vw,2.3rem);text-align:center;margin-bottom:.6rem}
+.section .sub{text-align:center;color:var(--grey);max-width:620px;margin:0 auto 2.6rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+.about-grid p{color:var(--grey);margin-bottom:1rem}
+.about-grid p strong{color:var(--dark)}
+.mission{border-left:4px solid var(--red);background:#fff;padding:1.2rem 1.4rem;border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--shadow)}
+.cards{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.7rem;transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#e5cfc9}
+.card .icon{width:52px;height:52px;border-radius:12px;background:#fdf0ef;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.card .icon svg{width:26px;height:26px;stroke:var(--red)}
+.card h3{font-size:1.15rem;margin-bottom:.55rem}
+.card p{color:var(--grey);font-size:.98rem}
+
+/* Contact */
+.contact-wrap{max-width:640px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2.2rem;box-shadow:var(--shadow)}
+.contact-wrap label{display:block;font-weight:500;margin-bottom:1.1rem;font-size:.95rem}
+.contact-wrap input,.contact-wrap textarea{width:100%;margin-top:.35rem;padding:.75rem .9rem;border:1.5px solid #ddd;border-radius:9px;font:inherit;transition:.2s}
+.contact-wrap input:focus,.contact-wrap textarea:focus{outline:none;border-color:var(--red)}
+.contact-wrap button{width:100%;border:none;cursor:pointer;font:inherit}
+.note{text-align:center;color:var(--grey);font-size:.85rem;margin-top:1rem}
+
+footer{background:var(--dark);color:#e8e8e8;padding:2.6rem 0 1.6rem;margin-top:0}
+.foot{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;padding-bottom:1.6rem;border-bottom:1px solid #454545}
+.foot .brand{filter:none}
+.foot nav{display:flex;gap:1.6rem;align-items:center}
+.foot nav a:hover{color:#ff8a80}
+.copy{text-align:center;padding-top:1.3rem;font-size:.88rem;color:#bdbdbd}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+</style>
 </head>
 <body>
+
 <header>
   <div class="container navbar">
-    <a href="index.html"><img src="logo-kayan.PNG" alt="Kayan Trading logo" height="48"></a>
-
+    <a class="brand" href="#home" aria-label="Kayan Trading Inc. — Home"><img src="logo-kayan.PNG" alt="Kayan Trading Inc. logo"></a>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="burger" aria-label="Menu">&#9776;</label>
-
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About&nbsp;Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </header>
 
 <main>
-  <section class="hero container">
-    <h1>Welcome to <span>Kayan Canada</span></h1>
-    <p>Kayan Trading Inc. connects Canadian consumers with premium fragrances and global products.</p>
-    <a href="services.html" class="btn-primary">Explore Services</a>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <span class="eyebrow">Ottawa · Canada · Est. 2025</span>
+      <h1>Welcome to <span>Kayan Canada</span></h1>
+      <p>Kayan Trading Inc. connects Canadian consumers with premium fragrances and global products — blending Eastern heritage with modern elegance.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#services">Explore Services</a>
+        <a class="btn btn-ghost" href="#contact">Contact Us</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>2025</strong><small>Founded in Ottawa</small></div>
+        <div class="stat"><strong>3</strong><small>Core services</small></div>
+        <div class="stat"><strong>B2B + B2C</strong><small>Distribution reach</small></div>
+      </div>
+    </div>
   </section>
 
-  <section class="section">
+  <!-- About -->
+  <section class="section" id="about">
     <div class="container">
-      <h2>Our Core Services</h2>
-      <div class="cards">
-        <div class="card">
-          <strong>Perfume Brand Development</strong><br>
-          Create and launch exclusive perfume lines blending Eastern heritage with modern elegance.
-        </div>
-        <div class="card">
-          <strong>Import&nbsp;&amp;&nbsp;Export</strong><br>
-          Bridging Canadian customers with premium products worldwide and showcasing Canadian excellence abroad.
-        </div>
-        <div class="card">
-          <strong>Wholesale&nbsp;&amp;&nbsp;Retail</strong><br>
-          Comprehensive B2B and B2C distribution for in-house and partner brands across Canada.
+      <h2>About Kayan Trading Inc.</h2>
+      <p class="sub">Strong trading bridges between Canada and global markets.</p>
+      <div class="about-grid reveal">
+        <p>Founded in <strong>2025 in Ottawa</strong>, Kayan Trading Inc. builds strong trading bridges between Canada and global markets through import, export, wholesale, and retail operations.</p>
+        <div class="mission">
+          <p style="margin:0">Our mission is to deliver <em>quality, innovation, and trust</em> across every product we offer — starting with our flagship venture in premium perfumes tailored for the Canadian market.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section alt" id="services">
+    <div class="container">
+      <h2>Our Core Services</h2>
+      <p class="sub">From concept to shelf — and across borders.</p>
+      <div class="cards">
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.5L4.8 18a2.4 2.4 0 0 0 2.1 3.5h10.2a2.4 2.4 0 0 0 2.1-3.5L14 8.5V3"/><path d="M7.5 15h9"/></svg></div>
+          <h3>Perfume Brand Development</h3>
+          <p>From concept to shelf, we craft exclusive perfume collections that resonate with Canadian tastes while honoring Eastern richness.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg></div>
+          <h3>Import &amp; Export</h3>
+          <p>We streamline cross-border logistics, compliance, and market penetration for premium goods entering or leaving Canada.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1.7-5h14.6L21 9M3 9h18M3 9v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9M9 21v-6h6v6"/></svg></div>
+          <h3>Wholesale &amp; Retail</h3>
+          <p>Our distribution channels ensure nationwide reach for both B2B partners and direct consumers across Canada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p class="sub">We'd love to hear from you — send us a message and we'll get back to you shortly.</p>
+      <form class="contact-wrap reveal" action="https://submit-form.com/your-id" method="POST">
+        <label>Name
+          <input type="text" name="name" required placeholder="Your name">
+        </label>
+        <label>Email
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+        <label>Message
+          <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+      <p class="note">Design preview — the form keeps the original placeholder endpoint.</p>
     </div>
   </section>
 </main>
 
 <footer>
-  © 2025 Kayan Trading Inc. All rights reserved.
+  <div class="container">
+    <div class="foot">
+      <a class="brand" href="#home"><img src="logo-kayan.PNG" alt="Kayan Trading Inc. logo"></a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <p class="copy">© 2025 Kayan Trading Inc. All rights reserved.</p>
+  </div>
 </footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{document.getElementById('menu-toggle').checked=false}));
+</script>
 </body>
 </html>
