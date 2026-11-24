@@ -24,8 +24,10 @@ Source code of **[thekayan.com](https://thekayan.com)**, the website of Kayan Tr
 
 ## Publishing
 
-The site is plain HTML/CSS (no build step) hosted on **GitHub Pages**.
-Any change pushed to the `main` branch is published automatically within a minute or two.
+This repository holds the hand-built HTML/CSS version of the site.
+Note: the live **thekayan.com** is currently served by GoDaddy Website Builder,
+so changes here do **not** go live automatically — this repo is the clean,
+organized source copy.
 
 ## Tech
 
